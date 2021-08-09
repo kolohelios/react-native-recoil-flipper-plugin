@@ -1,19 +1,6 @@
 import React from 'react';
-import {
-	PluginClient,
-	usePlugin,
-	createState,
-	useValue,
-	Layout,
-} from 'flipper-plugin';
-import {
-	Accordion,
-	AccordionDetails,
-	AccordionSummary,
-	Typography,
-} from '@material-ui/core';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import ReactJson from 'react-json-view';
+import { PluginClient, createState } from 'flipper-plugin';
+import Atoms from './TabViews/Atoms';
 
 const EXPECTED_API_VERSION = 0;
 
@@ -65,25 +52,5 @@ export function plugin(client: PluginClient<Events, {}>) {
 }
 
 export function Component() {
-	const instance = usePlugin(plugin);
-	const data = useValue(instance.data);
-
-	return (
-		<Layout.ScrollContainer>
-			{Object.entries(data).map(([key, d]) => (
-				<Accordion>
-					<AccordionSummary
-						key={key}
-						expandIcon={<ExpandMoreIcon />}
-						aria-controls="panel1a-content"
-						id="panel1a-header">
-						<Typography>{key}</Typography>
-					</AccordionSummary>
-					<AccordionDetails>
-						<ReactJson src={d} />
-					</AccordionDetails>
-				</Accordion>
-			))}
-		</Layout.ScrollContainer>
-	);
+	return <Atoms plugin={plugin} />;
 }
