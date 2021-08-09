@@ -2,4 +2,6 @@
 
 ## Todo
 
-- [ ] add distribution step
+- [X] add distribution step
+- [ ] develop a more sophisticated UI
+- [ ] add instructions for installing the client to this README

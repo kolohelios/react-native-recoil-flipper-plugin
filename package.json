@@ -8,32 +8,45 @@
   "flipperBundlerEntry": "src/index.tsx",
   "license": "MIT",
   "keywords": [
-    "flipper-plugin", "react-native", "recoil", "state"
+    "flipper-plugin",
+    "react-native",
+    "recoil",
+    "state"
   ],
   "icon": "apps",
   "title": "Recoil State",
   "scripts": {
-    "lint": "flipper-pkg lint",
+    "lint": "eslint && flipper-pkg lint",
     "prepack": "flipper-pkg lint && flipper-pkg bundle",
     "build": "flipper-pkg bundle",
     "watch": "flipper-pkg bundle --watch",
     "test": "jest --no-watchman"
   },
   "peerDependencies": {
-    "flipper-plugin": "0.102.0",
-    "antd": "latest"
+    "antd": "latest",
+    "flipper-plugin": "0.102.0"
   },
   "devDependencies": {
     "@babel/preset-react": "latest",
     "@babel/preset-typescript": "latest",
+    "@react-native-community/eslint-config": "^3.0.0",
     "@testing-library/react": "latest",
     "@types/jest": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "antd": "latest",
-    "flipper-plugin": "0.102.0",
+    "eslint": "^7.32.0",
     "flipper-pkg": "0.96.1",
+    "flipper-plugin": "0.102.0",
     "jest": "latest",
+    "prettier": "^2.3.2",
     "typescript": "latest"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@material-ui/core": "^5.0.0-beta.2",
+    "@material-ui/icons": "^5.0.0-beta.1",
+    "react-json-view": "^1.21.3"
   }
 }
