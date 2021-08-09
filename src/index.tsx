@@ -12,6 +12,7 @@ import {
 	AccordionSummary,
 	Typography,
 } from '@material-ui/core';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ReactJson from 'react-json-view';
 
 const EXPECTED_API_VERSION = 0;
@@ -73,7 +74,7 @@ export function Component() {
 				<Accordion>
 					<AccordionSummary
 						key={key}
-						// expandIcon={<ExpandMoreIcon />}
+						expandIcon={<ExpandMoreIcon />}
 						aria-controls="panel1a-content"
 						id="panel1a-header">
 						<Typography>{key}</Typography>
