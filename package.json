@@ -2,13 +2,16 @@
   "$schema": "https://fbflipper.com/schemas/plugin-package/v2.json",
   "name": "flipper-plugin-react-native-recoil",
   "id": "recoil-state",
-  "version": "0.0.1",
+  "version": "0.0.2-alpha.0",
   "pluginType": "client",
   "main": "dist/bundle.js",
   "flipperBundlerEntry": "src/index.tsx",
   "license": "MIT",
   "keywords": [
-    "flipper-plugin", "react-native", "recoil", "state"
+    "flipper-plugin",
+    "react-native",
+    "recoil",
+    "state"
   ],
   "icon": "apps",
   "title": "Recoil State",
