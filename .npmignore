@@ -137,3 +137,6 @@ dist
 # Jest
 jest.config.js
 __mocks__/
+
+# Babel
+babel.config.js
