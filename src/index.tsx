@@ -1,6 +1,6 @@
 import React from 'react';
 import { PluginClient, createState } from 'flipper-plugin';
-import Atoms from './TabViews/Atoms';
+import TabController from './TabViews/TabController';
 
 const EXPECTED_API_VERSION = 0;
 
@@ -37,7 +37,6 @@ export function plugin(client: PluginClient<Events, {}>) {
 			);
 		}
 		if (message === EXPECTED_API_VERSION) {
-			// responder.success({ ack: true });
 		}
 	});
 
@@ -52,5 +51,5 @@ export function plugin(client: PluginClient<Events, {}>) {
 }
 
 export function Component() {
-	return <Atoms plugin={plugin} />;
+	return <TabController plugin={plugin} />;
 }
