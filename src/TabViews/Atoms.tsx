@@ -4,7 +4,7 @@ import {
 	AccordionSummary,
 	Typography,
 } from '@material-ui/core';
-import { Layout, usePlugin, useValue } from 'flipper-plugin';
+import { usePlugin, useValue } from 'flipper-plugin';
 import React from 'react';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ReactJson from 'react-json-view';
@@ -14,7 +14,7 @@ export default ({ plugin }: { plugin: any }) => {
 	const data = useValue(instance.data);
 
 	return (
-		<Layout.ScrollContainer>
+		<>
 			{Object.entries(data).map(([key, d]) => (
 				<Accordion>
 					<AccordionSummary
@@ -29,6 +29,6 @@ export default ({ plugin }: { plugin: any }) => {
 					</AccordionDetails>
 				</Accordion>
 			))}
-		</Layout.ScrollContainer>
+		</>
 	);
 };
