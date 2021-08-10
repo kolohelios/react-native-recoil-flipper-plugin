@@ -1,6 +1,7 @@
 import React from 'react';
 import { PluginClient, createState } from 'flipper-plugin';
 import TabController from './TabViews/TabController';
+import { DeepDiff } from 'deep-diff';
 
 const EXPECTED_API_VERSION = 0;
 
@@ -14,6 +15,8 @@ type Events = {
 	apiVersion: Data;
 };
 
+const snapshotStore = {};
+
 export function plugin(client: PluginClient<Events, {}>) {
 	const data = createState<Record<string, Data>>({}, { persist: 'data' });
 
@@ -21,6 +24,11 @@ export function plugin(client: PluginClient<Events, {}>) {
 		data.update(draft => {
 			draft[newRow.key] = newRow;
 		});
+		if (!snapshotStore[newRow.key]) {
+			snapshotStore[newRow.key] = [];
+		}
+		snapshotStore[newRow.key][newRow.id] = newRow;
+		console.log(DeepDiff(snapshotStore[newRow.key][newRow.id - 1], newRow));
 		console.log({ newRow });
 	});
 
